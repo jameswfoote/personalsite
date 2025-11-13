@@ -138,12 +138,6 @@ export default function Home() {
               >
                 Twitter
               </a>
-              <a
-                style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}
-                href="/bookshelf"
-              >
-                My Bookshelf
-              </a>
             </p>
           </div>
         </div>

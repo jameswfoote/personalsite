@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "James W. Foote",
-  description: "James W. Foote's personal site",
+  title: "James Foote",
+  description: "James Foote's personal site",
   viewport: "width=device-width, initial-scale=1",
 };
 
