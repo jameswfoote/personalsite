@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import { SiteHeader } from '../components/SiteHeader';
 
 export default function Bookshelf() {
   const [activeBook, setActiveBook] = useState<number | null>(null);
@@ -52,16 +52,7 @@ export default function Bookshelf() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center">
       <div className="w-full max-w-3xl" style={{ minHeight: '100vh', padding: '40px 30px' }}>
-        <div style={{ marginBottom: '20px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-            <h1 className="text-xl sm:text-2xl font-bold" style={{ color: '#000000' }}>My Bookshelf</h1>
-            <div className="text-sm sm:text-base" style={{ display: 'flex', gap: '15px' }}>
-              <Link href="/" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>Home</Link>
-              <Link href="/publications" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>Publications</Link>
-              <Link href="/bookshelf" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>My Bookshelf</Link>
-            </div>
-          </div>
-        </div>
+        <SiteHeader title="My Bookshelf" />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {books.map((book, index) => (
