@@ -23,10 +23,9 @@ export default function Home() {
         <div style={{ marginBottom: '60px' }}>
           <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
             <p style={{ marginBottom: '16px' }}>
-              James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems. His work is grounded in the belief that health intelligence should help people live with greater clarity, agency, and trust in their own judgment.
-            </p>
-            <p style={{ marginBottom: '16px' }}>
-              He works across machine learning, distributed systems, and software engineering, with experience in natural language processing, computer vision, and human-computer interaction. At Meeds, he is building systems designed to make complex health knowledge more rigorous, usable, and widely accessible.
+              James Foote is the founder and CEO of{' '}
+              <Link href="/meeds" style={{ textDecoration: 'underline', color: '#000' }}>Meeds</Link>,
+              a research company building safe, efficacious, and accessible health intelligence systems. His work is grounded in the belief that health intelligence should help people live with greater clarity, agency, and trust in their own judgment.
             </p>
             <p style={{ marginBottom: '16px' }}>
               He is especially interested in building technology that is not only advanced, but deeply useful to people in their everyday lives. His ambition is to help place powerful health intelligence directly in the hands of individuals.
