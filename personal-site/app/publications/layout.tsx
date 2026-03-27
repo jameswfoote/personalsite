@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Publications - James Foote",
+  title: "James Foote",
   description: "James Foote's publications and research",
 };
 
