@@ -26,6 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function () {
+              if (window.location.hostname !== "jameswfoote.github.io") return;
+              var path = window.location.pathname.replace(/^\\/personalsite(?=\\/|$)/, "");
+              var targetPath = path || "/";
+              var target = "https://jamesfoote.me" + targetPath + window.location.search + window.location.hash;
+              window.location.replace(target);
+            })();`,
+          }}
+        />
+      </head>
       <body
         className={`${raleway.variable} antialiased`}
         style={{ fontFamily: 'var(--font-raleway), Arial, sans-serif' }}
