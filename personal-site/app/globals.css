@@ -6,11 +6,17 @@
   margin: 0;
 }
 
-html,
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   background-color: #ffffff;
   color: #000000;
   font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -21,4 +27,10 @@ a {
 /* Ensure all text is black */
 p, h1, h2, h3, h4, h5, h6, span, div {
   color: #000000;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

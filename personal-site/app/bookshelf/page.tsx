@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Bookshelf() {
   const [activeBook, setActiveBook] = useState<number | null>(null);
@@ -47,46 +46,65 @@ export default function Bookshelf() {
     { title: "Deep Work", author: "Cal Newport", cover: "https://pictures.abebooks.com/isbn/9781455586691-us.jpg", review: "Newport's manifesto on the power of focused concentration in an age of distraction. Essential reading for anyone seeking to produce meaningful work in a world designed to fragment attention." },
     { title: "A Crack in Creation", author: "Jennifer Doudna", cover: "https://pictures.abebooks.com/isbn/9780544716940-us.jpg", review: "Doudna's insider account of discovering CRISPR gene editing. A Nobel laureate's perspective on the power and responsibility of rewriting the code of life itself." },
     { title: "Xenosystems", author: "Nick Land", cover: "https://pictures.abebooks.com/isbn/9781959403333-us.jpg", review: "Land's radical collection of blog posts exploring accelerationism, techno-capital, and the future of intelligence. Dense, provocative writing that treats capitalism as an inhuman evolutionary force reshaping reality itself." },
+    { title: "Anthem", author: "Ayn Rand", cover: "https://pictures.abebooks.com/isbn/9780451191137-us.jpg", review: "Rand's dystopian novella about the rediscovery of individualism. A powerful meditation on the importance of the self in a collectivist world, condensing her philosophy into a brief, haunting fable." },
+    { title: "Isaac Newton", author: "James Gleick", cover: "https://pictures.abebooks.com/isbn/9781400032952-us.jpg", review: "Gleick's elegant and concise biography of Isaac Newton. A masterful distillation of the complex, obsessive genius behind the scientific revolution - a man as consumed by alchemy and theology as by physics and mathematics." },
+    { title: "The Big Picture", author: "Sean Carroll", cover: "https://pictures.abebooks.com/isbn/9780525954828-us.jpg", review: "Carroll's ambitious synthesis of physics, philosophy, and meaning. A poetic naturalist's guide to understanding reality from quantum fields to consciousness, arguing that we can find purpose in a universe without teleology." },
   ];
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="w-full max-w-3xl" style={{ minHeight: '100vh', padding: '40px 30px' }}>
-        <div style={{ marginBottom: '20px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-            <h1 className="text-xl sm:text-2xl font-bold" style={{ color: '#000000' }}>My Bookshelf</h1>
-            <div className="text-sm sm:text-base" style={{ display: 'flex', gap: '15px' }}>
-              <Link href="/" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>Home</Link>
-              <Link href="/publications" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>Publications</Link>
-              <Link href="/bookshelf" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>My Bookshelf</Link>
-            </div>
-          </div>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: '600', margin: '0 0 15px 0' }}>
+            <Link href="/" style={{ textDecoration: 'none', color: '#000' }}>James Foote</Link>
+          </h1>
+          <nav style={{ display: 'flex', gap: '30px', justifyContent: 'center' }}>
+            <Link href="/" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Home</Link>
+            <Link href="/publications" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Publications</Link>
+            <Link href="/bookshelf" style={{ textDecoration: 'none', color: '#000', fontSize: '14px', borderBottom: '2px solid #000', paddingBottom: '2px' }}>My Bookshelf</Link>
+          </nav>
         </div>
+      </header>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+      {/* Main Content */}
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 30px' }}>
+        <h2 style={{ fontSize: '28px', fontWeight: '400', marginBottom: '40px', textAlign: 'center' }}>My Bookshelf</h2>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '20px' }}>
           {books.map((book, index) => (
             <div
               key={index}
-              className="relative group cursor-pointer"
+              style={{ position: 'relative', cursor: 'pointer' }}
               onMouseEnter={() => setActiveBook(index)}
               onMouseLeave={() => setActiveBook(null)}
             >
-              <div className="aspect-[2/3] bg-gray-100 rounded shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div style={{ aspectRatio: '2/3', backgroundColor: '#f5f5f5', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
                 <img
                   src={book.cover}
                   alt={book.title}
-                  className="w-full h-full object-contain bg-gray-50"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   loading="lazy"
                 />
                 {activeBook === index && (
-                  <div className="absolute inset-0 bg-white/95 flex flex-col justify-center transition-opacity duration-300" style={{ padding: '15px' }}>
-                    <h3 className="text-xs mb-1" style={{ color: '#000000', fontStyle: 'italic' }}>
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'rgba(255,255,255,0.97)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    padding: '12px',
+                    fontSize: '11px',
+                    lineHeight: '1.4'
+                  }}>
+                    <h3 style={{ fontWeight: '600', marginBottom: '4px', fontStyle: 'italic' }}>
                       {book.title}
                     </h3>
-                    <p className="text-xs mb-2" style={{ color: '#000000', fontSize: '10px' }}>
+                    <p style={{ marginBottom: '8px', color: '#666', fontSize: '10px' }}>
                       {book.author}
                     </p>
-                    <p className="text-xs leading-relaxed" style={{ color: '#000000', fontSize: '10px' }}>
+                    <p style={{ fontSize: '9px', color: '#333' }}>
                       {book.review}
                     </p>
                   </div>
@@ -95,7 +113,21 @@ export default function Bookshelf() {
             </div>
           ))}
         </div>
-      </div>
+      </main>
+
+      {/* Footer */}
+      <footer style={{ backgroundColor: '#ffffff', color: '#000', marginTop: '80px', padding: '40px 0', width: '100%' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
+          <div style={{ marginBottom: '20px' }}>
+            <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>
+            <a href="https://github.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>GitHub</a>
+            <a href="https://linkedin.com/in/jamesfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>LinkedIn</a>
+            <a href="https://twitter.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>Twitter</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

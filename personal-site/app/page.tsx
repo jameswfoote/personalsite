@@ -1,147 +1,95 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { CollapsibleSection } from './components/CollapsibleSection';
 
 export default function Home() {
-  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set(['about']));
-
-  const toggleSection = (section: string) => {
-    setExpandedSections(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(section)) {
-        newSet.delete(section);
-      } else {
-        newSet.add(section);
-      }
-      return newSet;
-    });
-  };
-
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="w-full max-w-3xl" style={{ minHeight: '100vh', padding: '40px 30px' }}>
-        <div style={{ marginBottom: '20px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-            <h1 className="text-xl sm:text-2xl font-bold" style={{ color: '#000000' }}>James W. Foote</h1>
-            <div className="text-sm sm:text-base" style={{ display: 'flex', gap: '15px' }}>
-              <Link href="/" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>Home</Link>
-              <Link href="/publications" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>Publications</Link>
-              <Link href="/bookshelf" style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}>My Bookshelf</Link>
-            </div>
-          </div>
-          <p className="text-sm sm:text-base" style={{ color: '#000000' }}>
-            Computer Science Student at the University of British Columbia. I&apos;m a Canadian-American scientist, entrepreneur, and philosopher who builds companies at the intersection of AI and human biology.
-          </p>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: '600', margin: '0 0 15px 0' }}>
+            <Link href="/" style={{ textDecoration: 'none', color: '#000' }}>James Foote</Link>
+          </h1>
+          <nav style={{ display: 'flex', gap: '30px', justifyContent: 'center' }}>
+            <Link href="/" style={{ textDecoration: 'none', color: '#000', fontSize: '14px', borderBottom: '2px solid #000', paddingBottom: '2px' }}>Home</Link>
+            <Link href="/publications" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Publications</Link>
+            <Link href="/bookshelf" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>My Bookshelf</Link>
+          </nav>
         </div>
+      </header>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          <CollapsibleSection
-            title="About"
-            isExpanded={expandedSections.has('about')}
-            onToggle={() => toggleSection('about')}
-          >
-            <div className="space-y-3 px-0 sm:px-5 text-sm sm:text-base" style={{ color: '#000000' }}>
-              <p>
-                I&apos;m a Computer Science student at the University of British Columbia, passionate about software development,
-                artificial intelligence, and building innovative solutions to real-world problems.
-              </p>
-              <p>
-                Currently focused on machine learning, distributed systems, and full-stack web development.
-                I enjoy exploring the intersection of technology and creativity, building projects that make a meaningful impact.
-              </p>
-              <p>
-                When I&apos;m not coding, you can find me exploring Vancouver&apos;s beautiful trails, reading about emerging technologies,
-                or contributing to open-source projects.
-              </p>
-            </div>
-          </CollapsibleSection>
-
-          <CollapsibleSection
-            title="Projects"
-            isExpanded={expandedSections.has('projects')}
-            onToggle={() => toggleSection('projects')}
-          >
-            <div className="space-y-3 px-0 sm:px-5 text-sm sm:text-base" style={{ color: '#000000' }}>
-              <p>
-                <span className="font-semibold">AI Research Assistant</span> - A machine learning-powered tool that helps
-                researchers analyze and summarize academic papers using natural language processing.
-              </p>
-              <p>
-                <span className="font-semibold">Campus Connect</span> - A web application that connects UBC students
-                for study groups, project collaborations, and campus events.
-              </p>
-              <p>
-                <span className="font-semibold">EcoTrack</span> - A mobile app that gamifies sustainable living by
-                tracking carbon footprint and providing personalized recommendations.
-              </p>
-            </div>
-          </CollapsibleSection>
-
-          <CollapsibleSection
-            title="Interests"
-            isExpanded={expandedSections.has('interests')}
-            onToggle={() => toggleSection('interests')}
-          >
-            <div className="space-y-3 px-0 sm:px-5 text-sm sm:text-base" style={{ color: '#000000' }}>
-              <p>
-                <span className="font-semibold">Technology:</span> Machine Learning, Cloud Computing, Blockchain,
-                Quantum Computing
-              </p>
-              <p>
-                <span className="font-semibold">Academic:</span> Algorithms, Computer Vision, Natural Language Processing,
-                Human-Computer Interaction
-              </p>
-              <p>
-                <span className="font-semibold">Personal:</span> Hiking, Photography, Chess, Science Fiction Literature,
-                Sustainable Technology
-              </p>
-            </div>
-          </CollapsibleSection>
-
-          <CollapsibleSection
-            title="Contact"
-            isExpanded={expandedSections.has('contact')}
-            onToggle={() => toggleSection('contact')}
-          >
-            <div className="space-y-3 px-0 sm:px-5 text-sm sm:text-base" style={{ color: '#000000' }}>
-              <p>Academic: jfoote01@student.ubc.ca</p>
-              <p>Personal: jameswfoote@gmail.com</p>
-              <p>Work: james@meeds.com</p>
-            </div>
-          </CollapsibleSection>
-
-          <div className="pt-16 pb-10">
-            <p className="text-sm sm:text-base" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-              <a
-                style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/jamesfoote"
-              >
-                GitHub
-              </a>
-              <a
-                style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://linkedin.com/in/jamesfoote"
-              >
-                LinkedIn
-              </a>
-              <a
-                style={{ textDecoration: 'underline', textUnderlineOffset: '2px', color: '#000000' }}
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com/jamesfoote"
-              >
-                Twitter
-              </a>
+      {/* Main Content */}
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 30px' }}>
+        {/* Bio Section */}
+        <div style={{ marginBottom: '60px' }}>
+          <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
+            <p style={{ marginBottom: '16px' }}>
+              James Foote is CEO of{' '}
+              <Link href="/meeds" style={{ textDecoration: 'underline', color: '#000' }}>Meeds</Link>,
+              a research corporation with the mission of building safe, efficacious, accessible health intelligence systems.
+            </p>
+            <p style={{ marginBottom: '16px' }}>
+              I&apos;m passionate about artificial intelligence, software development, and building innovative solutions
+              to real-world problems. Currently focused on machine learning, distributed systems, and full-stack web development.
+            </p>
+            <p style={{ marginBottom: '16px' }}>
+              I enjoy exploring the intersection of technology and creativity, building projects that make a meaningful impact.
+              My work spans across various domains including natural language processing, computer vision, and human-computer interaction.
+            </p>
+            <p style={{ marginBottom: '16px' }}>
+              When I&apos;m not coding, you can find me exploring Vancouver&apos;s beautiful trails, reading about emerging technologies,
+              or contributing to open-source projects.
+            </p>
+            <p style={{ marginBottom: '16px' }}>
+              For speaking engagements and press inquiries, please go{' '}
+              <Link href="/contact" style={{ textDecoration: 'underline', color: '#000' }}>here</Link>.
             </p>
           </div>
         </div>
-      </div>
+
+        {/* Horizontal Rule */}
+        <hr style={{ border: 'none', borderTop: '1px solid #e5e5e5', margin: '40px 0' }} />
+
+        {/* Additional Content Section */}
+        <div style={{ display: 'grid', gridTemplateColumns: '7fr 5fr', gap: '40px' }}>
+          <div>
+            <h2 style={{ fontSize: '20px', fontWeight: '500', marginBottom: '20px', textAlign: 'center' }}>Projects</h2>
+            <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
+              <p style={{ marginBottom: '16px' }}>
+                <strong>AI Research Assistant</strong> - A machine learning-powered tool that helps researchers analyze and summarize academic papers using natural language processing.
+              </p>
+              <p style={{ marginBottom: '16px' }}>
+                <strong>Campus Connect</strong> - A web application that connects UBC students for study groups, project collaborations, and campus events.
+              </p>
+              <p style={{ marginBottom: '16px' }}>
+                <strong>EcoTrack</strong> - A mobile app that gamifies sustainable living by tracking carbon footprint and providing personalized recommendations.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 style={{ fontSize: '20px', fontWeight: '500', marginBottom: '20px', textAlign: 'center' }}>Contact</h2>
+            <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
+              <p style={{ marginBottom: '8px' }}>Academic: jfoote01@student.ubc.ca</p>
+              <p style={{ marginBottom: '8px' }}>Personal: jameswfoote@gmail.com</p>
+              <p style={{ marginBottom: '8px' }}>Work: james@meeds.com</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer style={{ backgroundColor: '#ffffff', color: '#000', marginTop: '80px', padding: '40px 0', width: '100%' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
+          <div style={{ marginBottom: '20px' }}>
+            <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>
+            <a href="https://github.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>GitHub</a>
+            <a href="https://linkedin.com/in/jamesfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>LinkedIn</a>
+            <a href="https://twitter.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>Twitter</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
