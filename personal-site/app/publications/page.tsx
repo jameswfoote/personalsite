@@ -23,9 +23,6 @@ export default function Publications() {
         <p style={{ fontSize: '15px', color: '#666', textAlign: 'center', marginBottom: '40px' }}>Writing, notes, papers and half-formed ideas that are worth keeping around.</p>
 
         <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Coming soon...
-          </p>
 
           {/* Placeholder for future publications */}
           <div>
