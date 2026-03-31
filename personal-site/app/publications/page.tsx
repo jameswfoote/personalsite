@@ -19,7 +19,8 @@ export default function Publications() {
 
       {/* Main Content */}
       <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 30px' }}>
-        <h2 style={{ fontSize: '28px', fontWeight: '400', marginBottom: '40px', textAlign: 'center' }}>Publications</h2>
+        <h2 style={{ fontSize: '28px', fontWeight: '400', marginBottom: '12px', textAlign: 'center' }}>Publications</h2>
+        <p style={{ fontSize: '15px', color: '#666', textAlign: 'center', marginBottom: '40px' }}>Writing, notes, papers and half-formed ideas that are worth keeping around.</p>
 
         <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
           <p style={{ marginBottom: '16px' }}>
