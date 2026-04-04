@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div style={{ backgroundColor: '#fff' }}>
       {/* Header */}
       <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
@@ -18,7 +18,7 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px' }}>
+      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px 20px' }}>
         {/* Bio Section */}
         <div>
           <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
