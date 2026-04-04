@@ -120,6 +120,9 @@ export default function Bookshelf() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
+            <p style={{ fontSize: '14px', color: '#999' }}>
+              <a href="mailto:jameswfoote@gmail.com" style={{ color: '#999', textDecoration: 'none' }}>jameswfoote@gmail.com</a>
+            </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>
             <a href="https://github.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>GitHub</a>

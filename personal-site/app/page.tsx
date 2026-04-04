@@ -20,7 +20,7 @@ export default function Home() {
       {/* Main Content */}
       <main style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px' }}>
         {/* Bio Section */}
-        <div style={{ marginBottom: '60px' }}>
+        <div>
           <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
             <p style={{ marginBottom: '16px' }}>
               James Foote is the founder and CEO of{' '}
@@ -36,7 +36,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer style={{ backgroundColor: '#ffffff', color: '#000', marginTop: '80px', padding: '40px 0', width: '100%' }}>
+      <footer style={{ backgroundColor: '#ffffff', color: '#000', padding: '40px 0', width: '100%' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
