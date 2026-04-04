@@ -18,7 +18,7 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 30px' }}>
+      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px' }}>
         {/* Bio Section */}
         <div style={{ marginBottom: '60px' }}>
           <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
