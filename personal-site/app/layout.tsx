@@ -33,7 +33,7 @@ export default function RootLayout({
               if (window.location.hostname !== "jameswfoote.github.io") return;
               var path = window.location.pathname.replace(/^\\/personalsite(?=\\/|$)/, "");
               var targetPath = path || "/";
-              var target = "https://jamesfoote.me" + targetPath + window.location.search + window.location.hash;
+              var target = "https://jamesfoote.org" + targetPath + window.location.search + window.location.hash;
               window.location.replace(target);
             })();`,
           }}
