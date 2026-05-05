@@ -19,7 +19,7 @@ export default function Bookshelf() {
     { title: "Superintelligence", author: "Nick Bostrom", cover: "https://pictures.abebooks.com/isbn/9780199678112-us.jpg", review: "Bostrom's rigorous analysis of AI existential risk. Essential reading for understanding the potential trajectories of artificial general intelligence." },
     { title: "The Origin of Species", author: "Charles Darwin", cover: "https://pictures.abebooks.com/isbn/9780140432053-us.jpg", review: "Darwin's revolutionary theory of evolution by natural selection. The foundation of modern biology that fundamentally changed how we understand life and our place in nature." },
     { title: "Einstein: His Life and Universe", author: "Walter Isaacson", cover: "https://pictures.abebooks.com/isbn/9780743264747-us.jpg", review: "Isaacson's masterful biography reveals Einstein's rebellious nature and relentless curiosity. A portrait of genius that shows how his scientific breakthroughs emerged from his personal struggles and philosophical questions." },
-    { title: "For the New Intellectual", author: "Ayn Rand", cover: "https://pictures.abebooks.com/isbn/9780451163080-us-300.jpg", review: "" },
+    { title: "For the New Intellectual", author: "Ayn Rand", cover: "https://pictures.abebooks.com/isbn/9780451163080-us-300.jpg", review: "Rand's philosophical manifesto calling on a new class of rational thinkers to reclaim reason from mysticism and brute force. A provocative distillation of her Objectivist ethics and the role of the mind in human progress." },
     { title: "The Wisdom of Life", author: "Arthur Schopenhauer", cover: "https://pictures.abebooks.com/isbn/9780486435503-us.jpg", review: "Schopenhauer's practical philosophy for living well. A pessimist's guide to happiness that paradoxically offers profound insights on contentment, health, and the art of living." },
     { title: "How to Be Free", author: "Epicurus", cover: "https://pictures.abebooks.com/isbn/9780691177717-us.jpg", review: "Ancient wisdom on achieving happiness through simple pleasures and freedom from anxiety. Epicurus shows that true freedom comes from understanding what we actually need versus what we merely desire." },
     { title: "Skunk Works", author: "Ben Rich", cover: "https://pictures.abebooks.com/isbn/9780316743006-us.jpg", review: "Inside look at Lockheed's secret aerospace projects. Rich's account shows how small teams with autonomy can achieve the impossible." },
@@ -63,6 +63,7 @@ export default function Bookshelf() {
             <Link href="/" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Home</Link>
             <Link href="/publications" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Publications</Link>
             <Link href="/bookshelf" style={{ textDecoration: 'none', color: '#000', fontSize: '14px', borderBottom: '2px solid #000', paddingBottom: '2px' }}>My Bookshelf</Link>
+            <Link href="/contact" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Contact</Link>
           </nav>
         </div>
       </header>
