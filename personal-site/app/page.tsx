@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div style={{ backgroundColor: '#fff' }}>
-      <style>{`@media (max-width: 768px) { .home-main { padding-bottom: 0 !important; } .home-footer { padding-top: 20px !important; } }`}</style>
+      <style>{`@media (max-width: 768px) { .home-main { padding-bottom: 0 !important; } .home-footer { padding-top: 20px !important; } } @media (max-width: 600px) { nav { gap: 16px !important; } nav a { font-size: 13px !important; white-space: nowrap !important; } }`}</style>
       {/* Header */}
       <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
