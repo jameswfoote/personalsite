@@ -20,7 +20,7 @@ export default function Contact() {
       </header>
 
       {/* Main Content */}
-      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px' }}>
+      <main style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px 20px' }}>
         <h2 style={{ fontSize: '28px', fontWeight: '400', marginBottom: '40px', textAlign: 'center' }}>Contact</h2>
 
         <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
@@ -54,7 +54,7 @@ export default function Contact() {
       </main>
 
       {/* Footer */}
-      <footer style={{ backgroundColor: '#ffffff', color: '#000', marginTop: '80px', padding: '40px 0', width: '100%' }}>
+      <footer style={{ backgroundColor: '#ffffff', color: '#000', padding: '40px 0', width: '100%' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
