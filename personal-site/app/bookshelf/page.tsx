@@ -9,7 +9,7 @@ export default function Bookshelf() {
   const books = [
     { title: "Simulacra and Simulation", author: "Jean Baudrillard", cover: "https://pictures.abebooks.com/isbn/9780472065219-us.jpg", review: "Baudrillard's prophetic vision of hyperreality feels more relevant than ever. His analysis of how symbols have replaced reality predicted our current digital age with uncanny accuracy." },
     { title: "Co-Intelligence", author: "Ethan Mollick", cover: "https://pictures.abebooks.com/isbn/9780593716717-us.jpg", review: "Mollick's essential guide to living and working with AI. A practical framework for understanding how to collaborate with artificial intelligence as a creative partner." },
-    { title: "The Odyssey", author: "Homer", cover: "https://pictures.abebooks.com/isbn/9780140268867-us.jpg", review: "The archetypal hero's journey. Homer's epic remains the blueprint for every adventure story written since, yet its psychological depth still surprises." },
+    { title: "Hallelujah Moments: Tales of Drug Discovery", author: "Eugene H. Cordes", cover: "/covers/hallelujah-moments.jpg", review: "Cordes' tour of drug discovery traces how laboratory insight becomes medicine at the bedside. A set of scientific stories about persistence, serendipity, and the chemistry behind clinical breakthroughs." },
     { title: "Zeroism", author: "Bryan Johnson", cover: "/covers/zeroism.jpg", review: "Johnson's manifesto for radical life extension and human optimization. A blueprint for achieving 'don't die' through rigorous self-experimentation and biological monitoring." },
     { title: "The Infinite Game", author: "Simon Sinek", cover: "https://pictures.abebooks.com/isbn/9780735213500-us.jpg", review: "Sinek's powerful framework for understanding business and life. The distinction between finite and infinite games transforms how we think about competition, collaboration, and purpose." },
     { title: "The Infinity Machine", author: "Sebastian Mallaby", cover: "https://pictures.abebooks.com/isbn/9780593831847-us.jpg", review: "Mallaby's deeply reported biography of Demis Hassabis and DeepMind's quest for superintelligence. Drawing on unprecedented access, it traces the chess prodigy turned Nobel laureate racing to build the last invention humanity may ever need." },
@@ -103,12 +103,16 @@ export default function Bookshelf() {
                     <h3 style={{ fontWeight: '600', marginBottom: '4px', fontStyle: 'italic' }}>
                       {book.title}
                     </h3>
-                    <p style={{ marginBottom: '8px', color: '#666', fontSize: '10px' }}>
-                      {book.author}
-                    </p>
-                    <p style={{ fontSize: '9px', color: '#333' }}>
-                      {book.review}
-                    </p>
+                    {book.author && (
+                      <p style={{ marginBottom: '8px', color: '#666', fontSize: '10px' }}>
+                        {book.author}
+                      </p>
+                    )}
+                    {book.review && (
+                      <p style={{ fontSize: '9px', color: '#333' }}>
+                        {book.review}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
