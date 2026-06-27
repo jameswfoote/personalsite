@@ -26,7 +26,7 @@ export default function Home() {
           <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
             <p style={{ marginBottom: '16px' }}>
               Born in New York City, James Foote is the founder and CEO of{' '}
-              <Link href="/meeds" style={{ textDecoration: 'underline', color: '#000' }}>Meeds</Link>,
+              <a href="https://meeds.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: '#000' }}>Meeds</a>,
               a research company building safe, efficacious, and accessible health intelligence systems. His work is grounded in the belief that health intelligence should help people live with greater clarity, agency, and trust in their own judgment.
             </p>
             <p style={{ marginBottom: '16px' }}>
