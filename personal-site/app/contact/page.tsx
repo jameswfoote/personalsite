@@ -40,7 +40,7 @@ export default function Contact() {
             <div>
               <span style={{ fontWeight: '500' }}>LinkedIn</span>
               <span style={{ color: '#999', margin: '0 12px' }}>—</span>
-              <a href="https://www.linkedin.com/in/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'underline' }}>www.linkedin.com/in/jameswfoote</a>
+              <a href="https://www.linkedin.com/in/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'underline' }}>linkedin.com/in/jameswfoote</a>
             </div>
             <div>
               <span style={{ fontWeight: '500' }}>Twitter</span>
