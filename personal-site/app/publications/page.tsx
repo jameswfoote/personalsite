@@ -1,6 +1,12 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { SHOW_PUBLICATIONS } from '../siteConfig';
 
 export default function Publications() {
+  if (!SHOW_PUBLICATIONS) {
+    notFound();
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <style>{`@media (max-width: 600px) { nav { gap: 16px !important; } nav a { font-size: 13px !important; white-space: nowrap !important; } }`}</style>

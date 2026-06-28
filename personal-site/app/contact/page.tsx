@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SHOW_PUBLICATIONS } from '../siteConfig';
 
 export default function Contact() {
   return (
@@ -12,7 +13,9 @@ export default function Contact() {
           </h1>
           <nav style={{ display: 'flex', gap: '30px', justifyContent: 'center' }}>
             <Link href="/" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Home</Link>
-            <Link href="/publications" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Publications</Link>
+            {SHOW_PUBLICATIONS && (
+              <Link href="/publications" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>Publications</Link>
+            )}
             <Link href="/bookshelf" style={{ textDecoration: 'none', color: '#000', fontSize: '14px' }}>My Bookshelf</Link>
             <Link href="/contact" style={{ textDecoration: 'none', color: '#000', fontSize: '14px', borderBottom: '2px solid #000', paddingBottom: '2px' }}>Contact</Link>
           </nav>
