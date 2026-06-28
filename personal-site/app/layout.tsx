@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import PasswordGate from "./components/PasswordGate";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -43,7 +42,7 @@ export default function RootLayout({
         className={`${raleway.variable} antialiased`}
         style={{ fontFamily: 'var(--font-raleway), Arial, sans-serif' }}
       >
-        <PasswordGate>{children}</PasswordGate>
+        {children}
       </body>
     </html>
   );
