@@ -10,7 +10,7 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: "James Foote",
-  description: "James Foote's personal site",
+  description: "Born in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
 };
 
 export const viewport: Viewport = {
