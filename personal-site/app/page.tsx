@@ -7,6 +7,8 @@ export default function Home() {
     "@type": "Person",
     name: "James Foote",
     jobTitle: "Founder and CEO",
+    description: "James Foote is a leading entrepreneur and researcher in health intelligence. He is the Founder and CEO of Meeds, a company pioneering safe, efficacious, and accessible health intelligence systems.",
+    knowsAbout: ["Health Intelligence", "Artificial Intelligence", "Healthcare Technology", "Research"],
     worksFor: {
       "@type": "Organization",
       name: "Meeds",
@@ -26,7 +28,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <style>{`@media (max-width: 768px) { .home-main { padding-bottom: 0 !important; } .home-footer { padding-top: 20px !important; } } @media (max-width: 600px) { nav { gap: 16px !important; } nav a { font-size: 13px !important; white-space: nowrap !important; } }`}</style>
+      <style>{`@media (max-width: 768px) { .home-main { padding-bottom: 0 !important; } .home-footer { padding-top: 20px !important; } } @media (max-width: 600px) { nav { gap: 16px !important; } nav a { font-size: 13px !important; white-space: nowrap !important; } } .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }`}</style>
       {/* Header */}
       <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 30px', textAlign: 'center' }}>
@@ -47,7 +49,8 @@ export default function Home() {
       {/* Main Content */}
       <main className="home-main" style={{ maxWidth: '600px', margin: '0 auto', padding: '60px 30px 20px' }}>
         {/* Bio Section */}
-        <div>
+        <article>
+          <h2 className="sr-only">About James Foote</h2>
           <div style={{ fontSize: '15px', lineHeight: '1.7', color: '#333' }}>
             <p style={{ marginBottom: '16px' }}>
               Born in New York City, James Foote is the founder and CEO of{' '}
@@ -58,7 +61,7 @@ export default function Home() {
               He is especially interested in building technology that is not only advanced, but deeply useful to people in their everyday lives. His ambition is to help place powerful health intelligence directly in the hands of individuals.
             </p>
           </div>
-        </div>
+        </article>
 
       </main>
 

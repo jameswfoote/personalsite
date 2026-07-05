@@ -9,8 +9,25 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jamesfoote.org"),
   title: "James Foote",
   description: "Born in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
+  openGraph: {
+    title: "James Foote",
+    description: "Born in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
+    url: "https://jamesfoote.org",
+    siteName: "James Foote",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "James Foote",
+    creator: "@jameswfoote",
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export const viewport: Viewport = {
