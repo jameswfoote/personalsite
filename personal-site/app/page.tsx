@@ -2,8 +2,30 @@ import Link from 'next/link';
 import { SHOW_PUBLICATIONS } from './siteConfig';
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "James Foote",
+    jobTitle: "Founder and CEO",
+    worksFor: {
+      "@type": "Organization",
+      name: "Meeds",
+      url: "https://meeds.com"
+    },
+    url: "https://jamesfoote.org",
+    sameAs: [
+      "https://github.com/jameswfoote",
+      "https://www.linkedin.com/in/jameswfoote",
+      "https://twitter.com/jameswfoote"
+    ]
+  };
+
   return (
     <div style={{ backgroundColor: '#fff' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style>{`@media (max-width: 768px) { .home-main { padding-bottom: 0 !important; } .home-footer { padding-top: 20px !important; } } @media (max-width: 600px) { nav { gap: 16px !important; } nav a { font-size: 13px !important; white-space: nowrap !important; } }`}</style>
       {/* Header */}
       <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
