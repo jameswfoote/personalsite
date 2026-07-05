@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 import { SHOW_PUBLICATIONS } from './siteConfig'
+
+export const dynamic = 'force-static'
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
