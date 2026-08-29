@@ -35,7 +35,7 @@ export default function Contact() {
             <div>
               <span style={{ fontWeight: '500' }}>Email</span>
               <span style={{ color: '#999', margin: '0 12px' }}>—</span>
-              <a href="mailto:jameswfoote@gmail.com" style={{ color: '#000', textDecoration: 'underline' }}>jameswfoote@gmail.com</a>
+              <a href="mailto:james@meeds.com" style={{ color: '#000', textDecoration: 'underline' }}>james@meeds.com</a>
             </div>
             <div>
               <span style={{ fontWeight: '500' }}>LinkedIn</span>
@@ -62,7 +62,7 @@ export default function Contact() {
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
             <p style={{ fontSize: '14px', color: '#999' }}>
-              <a href="mailto:jameswfoote@gmail.com" style={{ color: '#999', textDecoration: 'none' }}>jameswfoote@gmail.com</a>
+              <a href="mailto:james@meeds.com" style={{ color: '#999', textDecoration: 'none' }}>james@meeds.com</a>
             </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>

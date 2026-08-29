@@ -130,7 +130,7 @@ export default function Bookshelf() {
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
             <p style={{ fontSize: '14px', color: '#999' }}>
-              <a href="mailto:jameswfoote@gmail.com" style={{ color: '#999', textDecoration: 'none' }}>jameswfoote@gmail.com</a>
+              <a href="mailto:james@meeds.com" style={{ color: '#999', textDecoration: 'none' }}>james@meeds.com</a>
             </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>

@@ -8,6 +8,7 @@ export default function Home() {
     name: "James Foote",
     jobTitle: "Founder and CEO",
     description: "James Foote is a leading entrepreneur and researcher in health intelligence. He is the Founder and CEO of Meeds, a company pioneering safe, efficacious, and accessible health intelligence systems.",
+    email: "mailto:james@meeds.com",
     knowsAbout: ["Health Intelligence", "Artificial Intelligence", "Healthcare Technology", "Research"],
     worksFor: {
       "@type": "Organization",
@@ -71,7 +72,7 @@ export default function Home() {
           <div style={{ marginBottom: '20px' }}>
             <p style={{ fontSize: '14px', color: '#999', marginBottom: '8px' }}>Vancouver, British Columbia</p>
             <p style={{ fontSize: '14px', color: '#999' }}>
-              <a href="mailto:jameswfoote@gmail.com" style={{ color: '#999', textDecoration: 'none' }}>jameswfoote@gmail.com</a>
+              <a href="mailto:james@meeds.com" style={{ color: '#999', textDecoration: 'none' }}>james@meeds.com</a>
             </p>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>
