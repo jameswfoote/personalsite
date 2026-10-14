@@ -136,7 +136,7 @@ export default function Bookshelf() {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', fontSize: '14px' }}>
             <a href="https://github.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>GitHub</a>
             <a href="https://www.linkedin.com/in/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>LinkedIn</a>
-            <a href="https://twitter.com/jameswfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>Twitter</a>
+            <a href="https://twitter.com/jamesfoote" target="_blank" rel="noopener noreferrer" style={{ color: '#000', textDecoration: 'none' }}>Twitter</a>
           </div>
         </div>
       </footer>

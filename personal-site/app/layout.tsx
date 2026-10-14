@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "James Foote",
-    creator: "@jameswfoote",
+    creator: "@jamesfoote",
   },
   alternates: {
     canonical: "/",
