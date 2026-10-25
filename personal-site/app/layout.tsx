@@ -1,0 +1,67 @@
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
+
+const raleway = localFont({
+  src: "./fonts/raleway-latin.woff2",
+  variable: "--font-raleway",
+  weight: "300 700",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://jamesfoote.org"),
+  title: "James Foote",
+  description: "Born and raised in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
+  openGraph: {
+    title: "James Foote",
+    description: "Born and raised in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
+    url: "https://jamesfoote.org",
+    siteName: "James Foote",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "James Foote",
+    creator: "@jamesfoote",
+  },
+  alternates: {
+    canonical: "/",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function () {
+              if (window.location.hostname !== "jameswfoote.github.io") return;
+              var path = window.location.pathname.replace(/^\\/personalsite(?=\\/|$)/, "");
+              var targetPath = path || "/";
+              var target = "https://jamesfoote.org" + targetPath + window.location.search + window.location.hash;
+              window.location.replace(target);
+            })();`,
+          }}
+        />
+      </head>
+      <body
+        className={`${raleway.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-raleway), Arial, sans-serif' }}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
