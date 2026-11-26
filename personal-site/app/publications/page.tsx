@@ -14,7 +14,7 @@ type Publication = {
 const publications: Publication[] = [
   {
     kind: 'Paper',
-    date: 'November 2026',
+    date: '26 November 2026',
     title: 'A proof of bistability at all processivity levels in a model of ERK regulation',
     summary:
       'A proof of Conjecture 4.6 of Conradi, Obatake, Shiu and Tang. For every prescribed pair of kinase and phosphatase processivities, a single choice of rate constants and conserved totals gives two distinct positive equilibria, both exponentially stable on the same stoichiometric class. The main theorem is formally verified in Lean 4.',
@@ -60,7 +60,7 @@ export default function Publications() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {publications.map((publication) => (
-              <article key={publication.title} style={{ borderTop: '1px solid #e5e5e5', paddingTop: '24px' }}>
+              <article key={publication.title}>
                 <p style={{ fontSize: '13px', color: '#999', marginBottom: '6px' }}>
                   {publication.kind}
                   <span style={{ color: '#999', margin: '0 8px' }}>·</span>
