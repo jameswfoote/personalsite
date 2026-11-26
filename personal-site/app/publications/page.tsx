@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import { SHOW_PUBLICATIONS } from '../siteConfig';
 
 type Publication = {
-  kind: string;
   date: string;
   title: string;
   summary: string;
@@ -13,14 +12,13 @@ type Publication = {
 // Newest first.
 const publications: Publication[] = [
   {
-    kind: 'Paper',
     date: '26 November 2026',
     title: 'A proof of bistability at all processivity levels in a model of ERK regulation',
     summary:
       'A proof of Conjecture 4.6 of Conradi, Obatake, Shiu and Tang. For every prescribed pair of kinase and phosphatase processivities, a single choice of rate constants and conserved totals gives two distinct positive equilibria, both exponentially stable on the same stoichiometric class. The main theorem is formally verified in Lean 4.',
     links: [
       { label: 'PDF', href: '/papers/ERK-Conjecture-4.6.pdf' },
-      { label: 'Zenodo', href: 'https://doi.org/10.5281/zenodo.24556874' },
+      { label: 'Preprint', href: 'https://doi.org/10.5281/zenodo.24556874' },
       { label: 'Code', href: 'https://github.com/jameswfoote/erk-conjecture-4.6' },
     ],
   },
@@ -62,8 +60,6 @@ export default function Publications() {
             {publications.map((publication) => (
               <article key={publication.title}>
                 <p style={{ fontSize: '13px', color: '#999', marginBottom: '6px' }}>
-                  {publication.kind}
-                  <span style={{ color: '#999', margin: '0 8px' }}>·</span>
                   {publication.date}
                 </p>
                 <h3 style={{ fontSize: '17px', fontWeight: '500', lineHeight: '1.45', marginBottom: '10px' }}>
