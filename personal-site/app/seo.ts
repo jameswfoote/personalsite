@@ -18,18 +18,17 @@ export function absoluteUrl(path: string): string {
   return new URL(path, SITE_URL).toString();
 }
 
-// Per-page title, description, canonical URL, and social cards.
-// Paths end in a slash to match the static export (trailingSlash: true).
+// Per-page description, canonical URL, and social cards. Every page keeps the
+// plain "James Foote" title. Paths end in a slash to match the static export
+// (trailingSlash: true).
 export function pageMetadata({
   path,
-  title,
   description,
 }: {
   path: string;
-  title?: string;
   description: string;
 }): Metadata {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+  const fullTitle = SITE_NAME;
   const url = absoluteUrl(path);
 
   return {

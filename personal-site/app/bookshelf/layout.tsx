@@ -3,8 +3,7 @@ import { pageMetadata } from "../seo";
 
 export const metadata: Metadata = pageMetadata({
   path: "/bookshelf/",
-  title: "My Bookshelf",
-  description: "James Foote's bookshelf: books he has read, with a short review of each.",
+  description: "James Foote's book collection and reviews",
 });
 
 export default function BookshelfLayout({

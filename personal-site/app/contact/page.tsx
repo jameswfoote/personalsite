@@ -5,7 +5,6 @@ import { pageMetadata } from '../seo';
 
 export const metadata: Metadata = pageMetadata({
   path: '/contact/',
-  title: 'Contact',
   description: 'How to reach James Foote: email, LinkedIn, Twitter, and GitHub.',
 });
 
