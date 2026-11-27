@@ -91,10 +91,11 @@ export default function Bookshelf() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   loading="lazy"
                 />
-                {activeBook === index && (
-                  <div style={{
+                {/* Always rendered so crawlers can read each review; shown on hover. */}
+                <div style={{
                     position: 'absolute',
                     inset: 0,
+                    opacity: activeBook === index ? 1 : 0,
                     backgroundColor: 'rgba(255,255,255,0.97)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -117,7 +118,6 @@ export default function Bookshelf() {
                       </p>
                     )}
                   </div>
-                )}
               </div>
             </div>
           ))}

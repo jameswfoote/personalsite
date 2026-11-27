@@ -1,10 +1,15 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { SHOW_PUBLICATIONS } from './siteConfig';
+import { HOME_DESCRIPTION, PERSON_ID, SITE_URL, SOCIAL_PROFILES, pageMetadata } from './seo';
+
+export const metadata: Metadata = pageMetadata({ path: '/', description: HOME_DESCRIPTION });
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": PERSON_ID,
     name: "James Foote",
     jobTitle: "Founder and CEO",
     description: "James Foote is a leading entrepreneur and researcher in health intelligence. He is the Founder and CEO of Meeds, a company pioneering safe, efficacious, and accessible health intelligence systems.",
@@ -15,12 +20,8 @@ export default function Home() {
       name: "Meeds",
       url: "https://meeds.com"
     },
-    url: "https://jamesfoote.org",
-    sameAs: [
-      "https://github.com/jameswfoote",
-      "https://www.linkedin.com/in/jameswfoote",
-      "https://twitter.com/jamesfoote"
-    ]
+    url: SITE_URL,
+    sameAs: SOCIAL_PROFILES
   };
 
   return (

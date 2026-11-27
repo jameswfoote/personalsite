@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import { SHOW_PUBLICATIONS } from "../siteConfig";
+import { pageMetadata } from "../seo";
 
 export const metadata: Metadata = {
-  title: "James Foote",
-  description: "Papers, essays, and other miscellaneous thoughts by James Foote.",
-  robots: SHOW_PUBLICATIONS ? undefined : {
-    index: false,
-    follow: false,
-  },
+  ...pageMetadata({
+    path: "/publications/",
+    title: "Publications",
+    description: "Papers, essays, and other miscellaneous thoughts by James Foote.",
+  }),
+  ...(!SHOW_PUBLICATIONS && {
+    robots: {
+      index: false,
+      follow: false,
+    },
+  }),
 };
 
 export default function PublicationsLayout({

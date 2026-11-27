@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { HOME_DESCRIPTION, SITE_NAME, SITE_URL } from "./seo";
 
 const raleway = localFont({
   src: "./fonts/raleway-latin.woff2",
@@ -9,25 +10,23 @@ const raleway = localFont({
   display: "swap",
 });
 
+// Site-wide defaults. Each page sets its own title, description, and canonical URL
+// with pageMetadata() from ./seo, so no page inherits the homepage's canonical.
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jamesfoote.org"),
-  title: "James Foote",
-  description: "Born and raised in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_NAME,
+  description: HOME_DESCRIPTION,
   openGraph: {
-    title: "James Foote",
-    description: "Born and raised in New York City, James Foote is the founder and CEO of Meeds, a research company building safe, efficacious, and accessible health intelligence systems.",
-    url: "https://jamesfoote.org",
-    siteName: "James Foote",
+    title: SITE_NAME,
+    description: HOME_DESCRIPTION,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "James Foote",
+    card: "summary",
+    title: SITE_NAME,
     creator: "@jamesfoote",
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 

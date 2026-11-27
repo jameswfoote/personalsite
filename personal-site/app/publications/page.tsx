@@ -1,36 +1,54 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SHOW_PUBLICATIONS } from '../siteConfig';
-
-type Publication = {
-  date: string;
-  title: string;
-  summary: string;
-  links: { label: string; href: string }[];
-};
-
-// Newest first.
-const publications: Publication[] = [
-  {
-    date: '26 November 2026',
-    title: 'A proof of bistability at all processivity levels in a model of ERK regulation',
-    summary:
-      'A proof of Conjecture 4.6 of Conradi, Obatake, Shiu and Tang. For every prescribed pair of kinase and phosphatase processivities, a single choice of rate constants and conserved totals gives two distinct positive equilibria, both exponentially stable on the same stoichiometric class. The main theorem is formally verified in Lean 4.',
-    links: [
-      { label: 'PDF', href: '/papers/ERK-Conjecture-4.6.pdf' },
-      { label: 'Preprint', href: 'https://doi.org/10.5281/zenodo.24556874' },
-      { label: 'Code', href: 'https://github.com/jameswfoote/erk-conjecture-4.6' },
-    ],
-  },
-];
+import { absoluteUrl, PERSON_ID, ORCID_URL, SITE_URL } from '../seo';
+import { publications, formatPublicationDate } from './data';
 
 export default function Publications() {
   if (!SHOW_PUBLICATIONS) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Publications',
+    description: 'Papers, essays, and other miscellaneous thoughts by James Foote.',
+    url: absoluteUrl('/publications/'),
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: publications.map((publication, index) => {
+        const pdf = publication.links.find((link) => link.href.endsWith('.pdf'));
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          item: {
+            '@type': 'ScholarlyArticle',
+            headline: publication.title,
+            name: publication.title,
+            abstract: publication.summary,
+            datePublished: publication.published,
+            author: { '@type': 'Person', '@id': PERSON_ID, name: 'James Foote', url: SITE_URL, sameAs: ORCID_URL },
+            url: publication.doi ? `https://doi.org/${publication.doi}` : absoluteUrl(publication.links[0].href),
+            ...(publication.doi && {
+              identifier: { '@type': 'PropertyValue', propertyID: 'DOI', value: publication.doi },
+            }),
+            ...(pdf && {
+              encoding: { '@type': 'MediaObject', encodingFormat: 'application/pdf', contentUrl: absoluteUrl(pdf.href) },
+            }),
+            sameAs: publication.links.map((link) => absoluteUrl(link.href)),
+          },
+        };
+      }),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style>{`@media (max-width: 600px) { nav { gap: 16px !important; } nav a { font-size: 13px !important; white-space: nowrap !important; } } .publication-link:hover { color: #666 !important; }`}</style>
       {/* Header */}
       <header style={{ padding: '20px 0', borderBottom: '1px solid #e5e5e5' }}>
@@ -60,7 +78,7 @@ export default function Publications() {
             {publications.map((publication) => (
               <article key={publication.title}>
                 <p style={{ fontSize: '13px', color: '#999', marginBottom: '6px' }}>
-                  {publication.date}
+                  <time dateTime={publication.published}>{formatPublicationDate(publication.published)}</time>
                 </p>
                 <h3 style={{ fontSize: '17px', fontWeight: '500', lineHeight: '1.45', marginBottom: '10px' }}>
                   <a

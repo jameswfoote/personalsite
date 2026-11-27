@@ -1,5 +1,13 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { SHOW_PUBLICATIONS } from '../siteConfig';
+import { pageMetadata } from '../seo';
+
+export const metadata: Metadata = pageMetadata({
+  path: '/contact/',
+  title: 'Contact',
+  description: 'How to reach James Foote: email, LinkedIn, Twitter, and GitHub.',
+});
 
 export default function Contact() {
   return (
